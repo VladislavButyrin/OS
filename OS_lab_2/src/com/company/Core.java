@@ -3,7 +3,7 @@ package com.company;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-import java.util.stream.IntStream;
+
 
 public class Core {
     private Queue<Process> processesQueue = new LinkedList<>();
@@ -20,10 +20,10 @@ public class Core {
         }
     }
     public void createProcess(int processQuantity) {
-        IntStream.range(0, processQuantity).forEach(i -> {
+        for (int i = 0; i < processQuantity; i++) {
             processes = new Process(i, maxTime, random.nextInt(10) + 1);
             processes.createThread();
             processesQueue.add(processes);
-        });
+        }
     }
 }

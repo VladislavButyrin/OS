@@ -28,7 +28,7 @@ public class Thread {
     }
 
     public int getWorkTime(){
-        if(workTime > time) return 2;
+        if(workTime > time) return time;
 
         return workTime;
     }

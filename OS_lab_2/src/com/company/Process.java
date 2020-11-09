@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.stream.IntStream;
+
 
 public class Process {
     private int threadQuantity;
@@ -18,7 +18,7 @@ public class Process {
         this.time = time;
     }
 
-    public boolean start(){
+    public boolean start() {
         System.out.print("* Процесс " + ID + " выполняется" + '\n');
         thread = threadQueue.poll();
 
@@ -51,9 +51,8 @@ public class Process {
     }
 
     public void createThread() {
-        IntStream.range(0, threadQuantity).forEach(i -> {
-            thread = new Thread(i, 2);
-            threadQueue.add(thread);
-        });
+       for (int i = 0; i < threadQuantity; i++) {
+            threadQueue.add(new Thread(i, 2));
+        }
     }
 }
