@@ -44,7 +44,6 @@ public class Process {
                 overallTime = 0;
                 return true;
             }
-
         }
 
         System.out.print("* Процесс " + ID + " выполнен." + " Времени затрачено: " + overallTime + '\n' + '\n');
