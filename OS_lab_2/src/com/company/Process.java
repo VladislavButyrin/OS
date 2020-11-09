@@ -9,7 +9,6 @@ public class Process {
     private int ID;
     private int time;
     private int overallTime = 0;
-    private Thread thread;
     private Queue<Thread> threadQueue = new LinkedList<>();
 
     Process(int ID, int time, int threadQuantity){
@@ -20,7 +19,7 @@ public class Process {
 
     public boolean start() {
         System.out.print("* Процесс " + ID + " выполняется" + '\n');
-        thread = threadQueue.poll();
+        Thread thread = threadQueue.poll();
 
         while(overallTime + thread.getWorkTime() <= time && thread != null){
             overallTime += thread.getWorkTime();
