@@ -7,7 +7,7 @@ public class Page {
     private int modified;
     private int referenced;
     private int timeAfterAppeal = 0;
-    private byte memory = 4;
+    private final byte memory = 4;
 
     public Page(int processID, int ID, String data, int referenced, int modified) {
         this.processID = processID;

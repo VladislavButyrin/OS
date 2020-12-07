@@ -1,5 +1,7 @@
 package com;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class PagesTable {
@@ -8,7 +10,7 @@ public class PagesTable {
     private int[] addressTable;
 
     PagesTable(Process process) {
-        this.pageList = process.getPageList();
+        pageList = new LinkedList<>();
         this.process = process;
         initRAMIdList();
     }
@@ -56,5 +58,17 @@ public class PagesTable {
 
     public void print(int digit) {
         System.out.print("\t" + digit + "\t");
+    }
+
+    public List<Page> getPageList() {
+        return pageList;
+    }
+
+    public int getPageListSize() {
+        return this.pageList.size();
+    }
+
+    public void addPage(Page page) {
+        pageList.add(page);
     }
 }
