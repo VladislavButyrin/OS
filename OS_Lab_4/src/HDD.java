@@ -101,4 +101,17 @@ public class HDD extends JPanel {
             x += width;
         }
     }
+
+    private INode addInDisk(int fileSectorSize, INode node) {
+        int index;
+        while (fileSectorSize > 0 ) {
+            index = (int) (Math.random() * (diskSectors.length));;
+            if (diskSectors[index].getSelectionType() == 0) {
+                node.add(index);
+                diskSectors[index].setSelectionType(1);
+                fileSectorSize--;
+            }
+        }
+        return node;
+    }
 }

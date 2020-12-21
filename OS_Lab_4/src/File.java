@@ -5,7 +5,8 @@ public class File extends MyTreeNode{
     private String nameObject;
     private String fileFormat;
     private int nodeSize;
-    private Cluster firstCluster;
+    private INode firstNode;
+    //private Cluster firstCluster;
     public File() {
     }
 
@@ -33,15 +34,16 @@ public class File extends MyTreeNode{
     public String getFileFormat() {
         return fileFormat;
     }
+    /*
+       public void displayTheSelectedObject(int selectionType) {
+           firstCluster.setSelectionType(selectionType);
+       }
 
-    public void displayTheSelectedObject(int selectionType) {
-        firstCluster.setSelectionType(selectionType);
-    }
 
-    public Cluster getFirstCluster() {
-        return firstCluster;
-    }
-
+       public Cluster getFirstCluster() {
+           return firstCluster;
+       }
+       */
     public int getSize() {
         return nodeSize;
     }
@@ -49,5 +51,13 @@ public class File extends MyTreeNode{
    @Override
     public String toString() {
         return nameObject + "." + fileFormat;
+    }
+
+    public INode getFirstNode() {
+        return firstNode;
+    }
+
+    public void setFirstNode(INode firstNode) {
+        this.firstNode = firstNode;
     }
 }
